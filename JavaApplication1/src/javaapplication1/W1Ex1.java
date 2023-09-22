@@ -8,7 +8,7 @@ package javaapplication1;
  *
  * @author 100171568
  */
-public class myApp {
+public class W1Ex1 {
 
     /**
      * @param args the command line arguments
