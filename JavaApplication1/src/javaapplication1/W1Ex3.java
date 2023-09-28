@@ -16,7 +16,7 @@ public class W1Ex3 {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter Height");
-        int height = myObj.nextInt();  // Read user input
+        int height = myObj.nextInt();  // Read user input as an integer (.nextInt) and stores it as an integer variable of height
         System.out.println("Enter Width");
         int width = myObj.nextInt();
         System.out.println("the perimeter is "+ (width+width+height+height) +" and the area is "+ width*height);

@@ -16,11 +16,11 @@ public class W1Ex6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int yearnow = Year.now().getValue();
-        Scanner myObj = new Scanner(System.in);
+        int yearnow = Year.now().getValue(); //gets current year as an integer
+        Scanner myObj = new Scanner(System.in); 
         System.out.println("enter your age");
         int age = myObj.nextInt();
-        int yearofbirth = (yearnow - age);
+        int yearofbirth = (yearnow - age); // subtracts the age from current year to get the year of birth
         System.out.println("you were born in: "+ yearofbirth);
         
         

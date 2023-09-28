@@ -21,8 +21,8 @@ public class W1Ex7 {
      */
     public static void main(String[] args) {
         //gets the local date
-        LocalDate today = LocalDate.now();
-        int yearnow = Year.now().getValue();
+        LocalDate today = LocalDate.now(); //gets the local date right now and saves it as a localdate variable
+        int yearnow = Year.now().getValue(); //gets the current year
         Scanner myObj = new Scanner(System.in);
         System.out.println("enter your date of birth(dd-mm-yyyy)");
         String DOB = myObj.nextLine();

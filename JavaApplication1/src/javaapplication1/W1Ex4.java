@@ -16,9 +16,9 @@ public class W1Ex4 {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter first number");
-        float Num1 = myObj.nextInt();
+        float Num1 = myObj.nextFloat(); //gets the value entered as an float and stores it as a float with variable of Num1
         System.out.println("Enter second number");
-        float Num2 = myObj.nextInt();
+        float Num2 = myObj.nextFloat();
         System.out.println("the average is "+ (Num1+Num2)/2);
         
         

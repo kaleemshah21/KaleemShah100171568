@@ -24,9 +24,9 @@ public class W1Ex5 {
         int Num2 = myObj.nextInt();
         System.out.println("in normal order "+ Num1 + " "+Num2);
         while (Num1!=0){
-            int digit = Num1 % 10;
-            reversed = reversed * 10 + digit;
-            Num1/=10;
+            int digit = Num1 % 10; //Inside the loop, it calculates the last digit of Num1 by using the modulo operator %. This digit is stored in the variable digit.
+            reversed = reversed * 10 + digit;//This line reverses the digits of Num1. It multiplies the current reversed value by 10 (shifting its digits left by one position) and then adds the digit to it. This process effectively builds the reversed number digit by digit.
+            Num1/=10; // divides the value in Num1 by 10 so that if its 123 it will be truncated to 12 as it is an integer.
         
         
     }
