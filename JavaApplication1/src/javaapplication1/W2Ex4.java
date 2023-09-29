@@ -3,24 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package javaapplication1;
-import helpers.*;
-import java.io.*;
-//NOT MANAGED TO GET WORKING.
-
+import java.util.Scanner;
 /**
  *
- * @author shahk
+ * @author 100171568
  */
-public class Guide_For_Using_Helper_Package {
+public class W2Ex4 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String name;
-      	System.out.println("Hello, what’s your name?");
-        name = InputReader.getString(); 
-        System.out.println("Hello " + name + "!");
+        for(int count=1; count<14;count++){
+            System.out.println(count +" x 7 ="+count*7);
+        }
+        
     }
     
 }
