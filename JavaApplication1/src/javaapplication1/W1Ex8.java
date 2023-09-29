@@ -24,6 +24,7 @@ public class W1Ex8 {
         double rounded = Math.round(miles*100);
         //divides value by 100 to get the true value again
         System.out.println(rounded/100);
+        System.out.println(feet);
     }
     
 }

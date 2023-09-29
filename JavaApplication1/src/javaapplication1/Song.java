@@ -13,7 +13,11 @@ public class Song {
     private String artist;
     private int plays;
     
-    public song(String Title,String Artist,Int Plays){
+    /*constructor
+    
+    
+    */
+    public Song(String Title,String Artist,int Plays){
         this.title=Title;
         this.artist=Artist;
         this.plays=Plays;
