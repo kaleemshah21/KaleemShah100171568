@@ -21,8 +21,9 @@ public class W1Ex9 {
         int months = myObj.nextInt();
         double amountEnd = amountStart * 0.01 * months;
         System.out.print("the amount at the end of the time period: ");
-        System.out.print(amountEnd+amountStart);
         
+        System.out.print(amountEnd+amountStart);
+      
         
     }
     
