@@ -48,8 +48,15 @@ public class Song {
         this.plays = newPlays;
     }
     
-    
-    
+//    // Static method to print all songs in a list
+//    public static void printAllSongs(List<Song> songs) {
+//        for (Song song : songs) {
+//            System.out.println("Title: " + song.getTitle());
+//            System.out.println("Artist: " + song.getArtist());
+//            System.out.println("Plays: " + song.getPlays());
+//            System.out.println();
+//        }
+//    }
     
     
     
