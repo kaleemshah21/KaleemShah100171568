@@ -24,4 +24,37 @@ public class Song {
         
     }
     
+    public String getTitle(){
+        return this.title;
+    }
+    
+    public String getArtist(){
+        return this.artist;
+    }
+    
+    public int getPlays(){
+        return this.plays;
+    }
+    
+    public void setTitle(String newTitle){
+        this.title = newTitle;
+    }
+    
+    public void setArtist(String newArtist){
+        this.artist = newArtist;
+    }
+    
+    public void setPlays(int newPlays){
+        this.plays = newPlays;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
