@@ -29,14 +29,37 @@ public class OOP {
         while (choice!=0){
             System.out.println(menu + "\n" + "enter your choice (1 2 3, etc): ");
             choice = myObj.nextInt();
+            myObj.nextLine(); //consumes the newline character (not sure what this means but program doesnt wait for user input if not used)
+            
+            
             if (choice == 1){
-                System.out.println("u typed 1");
+                //this block of code just gets the users input, parses it and splits it into variables
+                System.out.println("enter the song in this format (song name,artist,plays");
+                String songDetails = myObj.nextLine();
+                String[] songDetailsList = songDetails.split(",");
+                String songName = songDetailsList[0].trim();
+                String songArtist = songDetailsList[1].trim();
+                int songPlays = Integer.parseInt(songDetailsList[2]);
+                
+                //this creates a new song object with the users input and adds it to the array list of songs
+                songs.add(new Song(songName, songArtist, songPlays));
+                
+                
+                
+                
             }
             else if (choice == 2){
                 System.out.println("u typed 2");
             }
             else if (choice == 3){
-                System.out.println("u typed 3");
+                
+                // Print the updated list of songs to verify the title change
+                for (Song song : songs) {
+                    System.out.println("Title: " + song.getTitle());
+                    System.out.println("Artist: " + song.getArtist());
+                    System.out.println("Plays: " + song.getPlays());
+                    System.out.println();
+                }
             }
             else if (choice == 4){
                 System.out.println("u typed 4");
