@@ -17,6 +17,11 @@ public class Song {
     
     
     */
+    public Song(){
+        
+    }
+    
+    
     public Song(String Title,String Artist,int Plays){
         this.title=Title;
         this.artist=Artist;
@@ -46,6 +51,10 @@ public class Song {
     
     public void setPlays(int newPlays){
         this.plays = newPlays;
+    }
+    
+    public void print(){
+        System.out.println(this.title + "," + this.artist + "," + this.plays);
     }
     
 //    // Static method to print all songs in a list
