@@ -27,6 +27,11 @@ public class Student {
     }
     
     public void print(){
-        System.out.println(this.name + "," + this.ID);
+        System.out.println(this.name + "," + this.ID + "," + course.getCourseName() + "," + course.getCourseCode());
+        
+    }
+    
+    public void enroll(Course course){
+        this.course = course;
     }
 }

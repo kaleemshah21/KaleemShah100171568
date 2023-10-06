@@ -16,12 +16,14 @@ public class W3Ex1 {
     public static void main(String[] args) {
         Student myObj = new Student("Kaleem Shah",100171568);
         System.out.println(myObj.getName() + "," + myObj.getID());
-        myObj.print();
+        
         
         Course computing = new Course ("Computing","CO456");
         computing.print();
+        myObj.enroll(computing);
         
-        Course myObj2 = new Course();
+        myObj.print();
+        
         
     }
     

@@ -27,4 +27,11 @@ public class Course {
         System.out.println(this.name + "," + this.code);
     }
   
+    public String getCourseName(){
+        return this.name;
+    }
+    
+    public String getCourseCode(){
+        return this.code;
+    }
 }
