@@ -49,7 +49,21 @@ public class OOP {
                 
             }
             else if (choice == 2){
-                System.out.println("u typed 2");
+                System.out.println("Enter the title of the song you want to remove: ");
+                String songTORemove = myObj.nextLine();
+                boolean songFound = false;
+                
+                for (Song song:songs){
+                    if (song.getTitle().equalsIgnoreCase(songTORemove)){
+                        songs.remove(song);
+                        songFound = true;
+                        System.out.println("the song has been removed.");
+                        break;
+                    }
+                }
+                if (!songFound){
+                    System.out.println("song not in the list.");
+                }
             }
             else if (choice == 3){
                 
