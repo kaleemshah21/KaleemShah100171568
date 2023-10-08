@@ -19,8 +19,12 @@ public class OOP {
      */
     public static void main(String[] args) {
         List<Song> songs = new ArrayList<>();
-        //songs.add(new Song("I Wonder", "Kanye West", 491481155));
-        //songs.add(new Song("No Role Modelz", "J. Cole", 12345));
+        
+        //added a few songs when the program is run initially to make it easier to test the code
+        songs.add(new Song("I Wonder", "Kanye West", 491481155));
+        songs.add(new Song("No Role Modelz", "J. Cole", 12345));
+        songs.add(new Song("songname1", "artist1", 491481155));
+        songs.add(new Song("songname2", "artist3", 12));
         
         Scanner myObj = new Scanner(System.in);
         int choice = 3;
@@ -76,7 +80,18 @@ public class OOP {
                 }
             }
             else if (choice == 4){
-                System.out.println("u typed 4");
+                System.out.println("enter the minimum number of plays you want to see: ");
+                int minNumberOfPlays = myObj.nextInt();
+                
+                for (Song song:songs){
+                    if (song.getPlays() > minNumberOfPlays){
+                        System.out.println("Title: " + song.getTitle());
+                        System.out.println("Artist: " + song.getArtist());
+                        System.out.println("Plays: " + song.getPlays());
+                        System.out.println();
+                    }
+                        
+                }
             }
             else if (choice == 0){
                 System.out.println("u typed 0 so the program will quit");
