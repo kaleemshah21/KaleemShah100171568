@@ -31,7 +31,7 @@ public class OOP {
         int choice = 7;
         
         //creates a variable called menu which displays a menu on screen when printed
-        String menu = "\n 1.)Add a new song \n 2.)Remove a song \n 3.)Print a list of all the songs stored \n 4.)print a list of songs over a certain number of plays \n 0.)Exit";
+        String menu = "\n 1.)Add a new song \n 2.)Remove a song \n 3.)Print a list of all the songs stored \n 4.)print a list of songs over a certain number of plays \n 5.)update a songs number of plays \n 0.)Exit";
         
         //while loop to continuosly loop through the menu until a 0 is inputed as the choice
         while (choice!=0){
@@ -161,6 +161,54 @@ public class OOP {
                 catch(Exception e){
                     System.out.println("Invalid Entry");
                 }
+                
+            }
+            
+            //if the user enters 5 as the choice
+            else if (choice == 5){
+                
+                //prompts the user to enter the song title they would like to update the plays for
+                System.out.println("Enter the title of the song you want to remove: ");
+                //sets the variable to the users input
+                String songTitleToFind = myObj.nextLine();
+                //sets a variable to false until found
+                boolean songFound = false;
+                //tries the code below and catches the error e.g. if an invalid data type is entered as the integer plays
+                try{
+                    //prompts the user to enter the number of plays
+                    System.out.println("enter the new number of plays");
+                    int updatedPlays = myObj.nextInt();
+                    //consumes the newline character
+                    myObj.nextLine();
+                    
+                    //searches through the songs until the song title is found
+                    for (Song song:songs){
+                        if (song.getTitle().equalsIgnoreCase(songTitleToFind)){
+                            //changes the plays attribute for the song
+                            song.setPlays(updatedPlays);
+                            //sets songFound to true as the song is now found
+                            songFound = true;
+                            //outputs the new updated information
+                            System.out.println("Updated Song Information: ");
+                            System.out.println("Title: " + song.getTitle());
+                            System.out.println("Artist: " + song.getArtist());
+                            System.out.println("Plays: " + song.getPlays());
+                            System.out.println();
+                        }
+                        
+                    }
+                    //if the song is not found, an error message will be displayed
+                    if (!songFound){
+                        System.out.println("song not found");
+                    }
+                    
+                }
+                //if there is an error it will catch it and output an error message, this is to prevent the program from crashing
+                catch(Exception e){
+                    System.out.println("Invalid Entry");
+                }
+                
+
                 
             }
             
