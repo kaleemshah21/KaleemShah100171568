@@ -18,7 +18,7 @@ public class W3Ex1 {
         System.out.println(myObj.getName() + "," + myObj.getID());
         
         
-        Course computing = new Course ("Computing","CO456","1","2","3","4");
+        Course computing = new Course ("Computing","CO456");
         computing.print();
         myObj.enroll(computing);
         

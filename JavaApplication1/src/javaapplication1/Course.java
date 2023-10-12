@@ -18,9 +18,13 @@ public class Course {
         
     }
     
-    public Course(String name, String code, String module_1,String module_2, String module_3, String module_4){
+    public Course(String name, String code){
         this.name = name;
         this.code = code;
+        modules.add(new Module("Module1","MO1"));
+        modules.add(new Module("Module2","MO2"));
+        modules.add(new Module("Module3","MO4"));
+        modules.add(new Module("Module4","MO4"));
         
     }
     
@@ -28,6 +32,7 @@ public class Course {
     
     public void print(){
         System.out.println(this.name + "," + this.code);
+        
     }
   
     public String getCourseName(){
