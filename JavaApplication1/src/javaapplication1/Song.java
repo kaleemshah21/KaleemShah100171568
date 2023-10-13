@@ -58,16 +58,7 @@ public class Song {
     public void print(){
         System.out.println(this.title + "," + this.artist + "," + this.plays);
     }
-    
-//    // Static method to print all songs in a list
-//    public static void printAllSongs(List<Song> songs) {
-//        for (Song song : songs) {
-//            System.out.println("Title: " + song.getTitle());
-//            System.out.println("Artist: " + song.getArtist());
-//            System.out.println("Plays: " + song.getPlays());
-//            System.out.println();
-//        }
-//    }
+
     
     
 }

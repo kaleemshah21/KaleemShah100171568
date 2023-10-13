@@ -206,41 +206,53 @@ public class OOP {
                 //sets the variable to the users input
                 String songTitleToFind = myObj.nextLine();
                 //sets a variable to false until found
-                boolean songFound = false;
-                //tries the code below and catches the error e.g. if an invalid data type is entered as the integer plays
-                try{
-                    //prompts the user to enter the number of plays
-                    System.out.println("enter the new number of plays");
-                    int updatedPlays = myObj.nextInt();
-                    //consumes the newline character
-                    myObj.nextLine();
-                    
-                    //searches through the songs until the song title is found
-                    for (Song song:songs){
-                        if (song.getTitle().equalsIgnoreCase(songTitleToFind)){
-                            //changes the plays attribute for the song
-                            song.setPlays(updatedPlays);
-                            //sets songFound to true as the song is now found
-                            songFound = true;
-                            //outputs the new updated information
-                            System.out.println("Updated Song Information: ");
-                            System.out.println("Title: " + song.getTitle());
-                            System.out.println("Artist: " + song.getArtist());
-                            System.out.println("Plays: " + song.getPlays());
-                            System.out.println();
-                        }
-                        
-                    }
-                    //if the song is not found, an error message will be displayed
-                    if (!songFound){
-                        System.out.println("song not found");
-                    }
-                    
+                System.out.println("enter the new number of plays");
+                int updatedPlays = myObj.nextInt();
+                boolean success = myPlaylist.setSongPlays(songTitleToFind,updatedPlays);
+                if (!success){
+                    System.out.println("song not found");
                 }
-                //if there is an error it will catch it and output an error message, this is to prevent the program from crashing
-                catch(Exception e){
-                    System.out.println("Invalid Entry");
+                else{
+                    System.out.println("song successfully updated");
                 }
+                
+                
+                
+//                boolean songFound = false;
+//                //tries the code below and catches the error e.g. if an invalid data type is entered as the integer plays
+//                try{
+//                    //prompts the user to enter the number of plays
+//                    System.out.println("enter the new number of plays");
+//                    int updatedPlays = myObj.nextInt();
+//                    //consumes the newline character
+//                    myObj.nextLine();
+//                    
+//                    //searches through the songs until the song title is found
+//                    for (Song song:songs){
+//                        if (song.getTitle().equalsIgnoreCase(songTitleToFind)){
+//                            //changes the plays attribute for the song
+//                            song.setPlays(updatedPlays);
+//                            //sets songFound to true as the song is now found
+//                            songFound = true;
+//                            //outputs the new updated information
+//                            System.out.println("Updated Song Information: ");
+//                            System.out.println("Title: " + song.getTitle());
+//                            System.out.println("Artist: " + song.getArtist());
+//                            System.out.println("Plays: " + song.getPlays());
+//                            System.out.println();
+//                        }
+//                        
+//                    }
+//                    //if the song is not found, an error message will be displayed
+//                    if (!songFound){
+//                        System.out.println("song not found");
+//                    }
+//                    
+//                }
+//                //if there is an error it will catch it and output an error message, this is to prevent the program from crashing
+//                catch(Exception e){
+//                    System.out.println("Invalid Entry");
+//                }
                 
 
                 

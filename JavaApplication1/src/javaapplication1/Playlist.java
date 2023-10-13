@@ -58,6 +58,19 @@ public class Playlist {
         return songFound;
     }
     
+    public boolean setSongPlays(String songTitle,int songPlays ){
+        boolean songFound = false;
+        for (int index=0;index < playlist.size();index++){
+            Song current=playlist.get(index);
+            if (current.getTitle().equals(songTitle)){
+                current.setPlays(songPlays);
+                songFound = true;
+            
+            }
+        }
+        return songFound;
+    }
+    
     public void printAllAbovePlays(int songPlays){
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
