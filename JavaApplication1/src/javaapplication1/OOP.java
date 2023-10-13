@@ -12,16 +12,16 @@ public class OOP {
     
     public void createDefaultSongs(Playlist myPlaylist){
         Song[] songs = new Song[10];//creates a new array called songs which holds the Song objects
-        songs[0]= new Song("I Wonder","Kanye West",5670600);
-        songs[1]= new Song("title2","artist2",10);
-        songs[2]= new Song("title3","artist3",10);
-        songs[3]= new Song("title4","artist4",10);
-        songs[4]= new Song("title5","artist5",10);
-        songs[5]= new Song("title6","artist6",10);
-        songs[6]= new Song("title7","artist7",10);
-        songs[7]= new Song("title8","artist8",10);
-        songs[8]= new Song("title9","artist9",10);
-        songs[9]= new Song("title10","artist10",10);
+        songs[0]= new Song("Electric Dreams at Midnight","Luna Aurora",72);
+        songs[1]= new Song("Whispers in the Rain","Silver Harmony",45);
+        songs[2]= new Song("Neon Sunshine","Dreamcatcher",89);
+        songs[3]= new Song("Crystal Embrace","Midnight Mirage",12);
+        songs[4]= new Song("Starry Serenade","Celestial Serenity",61);
+        songs[5]= new Song("Velvet Skies","Phoenix Rising",34);
+        songs[6]= new Song("Echoes of Tomorrow","Aurora Borealis",98);
+        songs[7]= new Song("Lost in the Labyrinth of Love","Echo Enigma",27);
+        songs[8]= new Song("Invisible Wings","Velvet Shadows",55);
+        songs[9]= new Song("Enchanted Moonlight","Solar Flare Orchestra	",76);
         
         //searches through all songs in the songs list and adds them to the playlist arraylist
         for (Song song:songs){
