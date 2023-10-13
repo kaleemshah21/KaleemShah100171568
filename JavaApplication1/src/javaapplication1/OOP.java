@@ -16,7 +16,7 @@ public class OOP {
         //creates a new array list called songs which holds the Song objects
         Song[] songs = new Song[10];
         
-        songs[0]= new Song("title1","artist1",10);
+        songs[0]= new Song("I Wonder","Kanye West",5670600);
         songs[1]= new Song("title2","artist2",10);
         songs[2]= new Song("title3","artist3",10);
         songs[3]= new Song("title4","artist4",10);
@@ -31,7 +31,7 @@ public class OOP {
             myPlaylist.addSong(song);
         }
         
-        myPlaylist.printAll();
+        
         
         
         
@@ -51,10 +51,10 @@ public class OOP {
         Scanner myObj = new Scanner(System.in);
         
         //sets a variable called choice to 7 which is just used as a place holder until the user inputs their choice
-        int choice = 7;
+        int choice = 11;
         
         //creates a variable called menu which displays a menu on screen when printed
-        String menu = "\n 1.)Add a new song \n 2.)Remove a song \n 3.)Print a list of all the songs stored \n 4.)print a list of songs over a certain number of plays \n 5.)update a songs number of plays \n 0.)Exit";
+        String menu = "\n 1.)Add a new song \n 2.)Remove a song \n 3.)Print a list of all the songs stored \n 4.)print a list of songs over a certain number of plays \n 5.)update a songs number of plays \n 6.)print all songs by a given artist \n 7.)print a random song \n 0.)Exit";
         
         //while loop to continuosly loop through the menu until a 0 is inputed as the choice
         while (choice!=0){
@@ -202,7 +202,7 @@ public class OOP {
             else if (choice == 5){
                 
                 //prompts the user to enter the song title they would like to update the plays for
-                System.out.println("Enter the title of the song you want to remove: ");
+                System.out.println("Enter the title of the song you want to update: ");
                 //sets the variable to the users input
                 String songTitleToFind = myObj.nextLine();
                 //sets a variable to false until found
@@ -265,6 +265,19 @@ public class OOP {
                 
             }
             
+            
+            
+            
+            else if (choice == 6){
+                System.out.println("enter the name of the artist whos songs you would like to see: ");
+                String artistToFind = myObj.nextLine();
+                myPlaylist.findByArtist(artistToFind);
+                    
+            }
+            
+            else if (choice == 7){
+                myPlaylist.getRandomSong();
+            }
             //if the user enters 0 as the choice
             else if (choice == 0){
                 

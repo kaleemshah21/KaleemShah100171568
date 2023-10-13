@@ -4,6 +4,7 @@
  */
 package javaapplication1;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -62,7 +63,7 @@ public class Playlist {
         boolean songFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
-            if (current.getTitle().equals(songTitle)){
+            if (current.getTitle().equalsIgnoreCase(songTitle)){
                 current.setPlays(songPlays);
                 songFound = true;
             
@@ -78,6 +79,28 @@ public class Playlist {
                 current.print();
             }
         }
+    }
+    
+    public void findByArtist(String songArtist){
+        boolean artistFound = false;
+        for (int index=0;index < playlist.size();index++){
+            Song current=playlist.get(index);
+            if (current.getArtist().equalsIgnoreCase(songArtist)){
+                current.print();
+                artistFound = true;
+                
+            }
+        }
+        if (!artistFound){
+            System.out.println("no songs by this artist");
+        }
+    }
+    
+    public void getRandomSong(){
+        Random rand = new Random();
+        int n = rand.nextInt(this.playlist.size());
+        Song randomSong = this.playlist.get(n);
+        randomSong.print();
     }
     
     
