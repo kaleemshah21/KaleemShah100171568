@@ -12,17 +12,40 @@ public class OOP {
 
     
     public static void main(String[] args) {
+        Playlist myPlaylist=new Playlist();
         //creates a new array list called songs which holds the Song objects
-        List<Song> songs = new ArrayList<>();
+        Song[] songs = new Song[10];
+        
+        songs[0]= new Song("title1","artist1",10);
+        songs[1]= new Song("title2","artist2",10);
+        songs[2]= new Song("title3","artist3",10);
+        songs[3]= new Song("title4","artist4",10);
+        songs[4]= new Song("title5","artist5",10);
+        songs[5]= new Song("title6","artist6",10);
+        songs[6]= new Song("title7","artist7",10);
+        songs[7]= new Song("title8","artist8",10);
+        songs[8]= new Song("title9","artist9",10);
+        songs[9]= new Song("title10","artist10",10);
+        
+        for (Song song:songs){
+            myPlaylist.addSong(song);
+        }
+        
+        myPlaylist.printAll();
+        
+        
+        
+
+        //List<Song> songs = new ArrayList<>();
         
         //regular expression for adding a song
         String REGEX = "^.*,[A-Za-z ]+,\\d+$";
         
         //added a few songs when the program is run initially to make it easier to test the code
-        songs.add(new Song("I Wonder", "Kanye West", 491481155));
-        songs.add(new Song("No Role Modelz", "J. Cole", 12345));
-        songs.add(new Song("songname1", "artist1", 491481155));
-        songs.add(new Song("songname2", "artist3", 12));
+//        songs.add(new Song("I Wonder", "Kanye West", 491481155));
+//        songs.add(new Song("No Role Modelz", "J. Cole", 12345));
+//        songs.add(new Song("songname1", "artist1", 491481155));
+//        songs.add(new Song("songname2", "artist3", 12));
         
         //creates a scanner object to read inputs
         Scanner myObj = new Scanner(System.in);
@@ -77,9 +100,11 @@ public class OOP {
                         String songName = songDetailsList[0].trim();
                         String songArtist = songDetailsList[1].trim();
                         int songPlays = Integer.parseInt(songDetailsList[2]);
+                        Song song1 = new Song(songName,songArtist,songPlays);
+                        myPlaylist.addSong(song1);
                         
                         //this creates a new song object with the users input and adds it to the array list of songs
-                        songs.add(new Song(songName, songArtist, songPlays));
+//                        songs.add(new Song(songName, songArtist, songPlays));
                         System.out.println("success");
                     }
                     
@@ -100,25 +125,31 @@ public class OOP {
                 
                 //sets the song name to a variable called songTORemove
                 String songTORemove = myObj.nextLine();
-                
+                boolean Found = myPlaylist.removeSong(songTORemove);
+                if (!Found){
+                    System.out.println("song not found");
+                }
+                else{
+                    System.out.println("song has been removed successfully");
+                }
                 //sets a boolean variable to false
-                boolean songFound = false;
-                
-                //searches the songs array list to see if the song is there
-                for (Song song:songs){
-                    
-                    //if the song is present, it will be removed from the array list
-                    if (song.getTitle().equalsIgnoreCase(songTORemove)){
-                        songs.remove(song);
-                        songFound = true;
-                        System.out.println("the song has been removed.");
-                        break;
-                    }
-                }
-                //if the song is not present in the array list then it will output a message saying so
-                if (!songFound){
-                    System.out.println("song not in the list.");
-                }
+//                boolean songFound = false;
+//                
+//                //searches the songs array list to see if the song is there
+//                for (Song song:songs){
+//                    
+//                    //if the song is present, it will be removed from the array list
+//                    if (song.getTitle().equalsIgnoreCase(songTORemove)){
+////                        songs.remove(song);
+//                        songFound = true;
+//                        System.out.println("the song has been removed.");
+//                        break;
+//                    }
+//                }
+//                //if the song is not present in the array list then it will output a message saying so
+//                if (!songFound){
+//                    System.out.println("song not in the list.");
+//                }
             }
             
             //if the user enters 3 as the choice
@@ -126,12 +157,15 @@ public class OOP {
                 
                 //loops through the song array list
                 // Print the updated list of songs to verify the title change
-                for (Song song : songs) {
-                    System.out.println("Title: " + song.getTitle());
-                    System.out.println("Artist: " + song.getArtist());
-                    System.out.println("Plays: " + song.getPlays());
-                    System.out.println();
-                }
+                
+                
+                myPlaylist.printAll();
+//                for (Song song : songs) {
+//                    System.out.println("Title: " + song.getTitle());
+//                    System.out.println("Artist: " + song.getArtist());
+//                    System.out.println("Plays: " + song.getPlays());
+//                    System.out.println();
+//                }
             }
             
             //if the user enters 4 as the choice
