@@ -9,12 +9,9 @@ import java.util.regex.*;
  * @author shahk
  */
 public class OOP {
-
     
-    public static void main(String[] args) {
-        Playlist myPlaylist=new Playlist();//creates a new object of the playlist class called myPlaylist
+    public void createDefaultSongs(Playlist myPlaylist){
         Song[] songs = new Song[10];//creates a new array called songs which holds the Song objects
-        //creates 10 default song objects and adds them to the songs list
         songs[0]= new Song("I Wonder","Kanye West",5670600);
         songs[1]= new Song("title2","artist2",10);
         songs[2]= new Song("title3","artist3",10);
@@ -31,13 +28,14 @@ public class OOP {
             myPlaylist.addSong(song);
         }
         
-        
-        
-        
-        
+}
 
-     
-        
+    
+    public static void main(String[] args) {
+        Playlist myPlaylist=new Playlist();//creates a new object of the playlist class called myPlaylist
+        OOP oop = new OOP(); // Create an object of the oop class
+        oop.createDefaultSongs(myPlaylist); // Calls the method createDefaultSongs
+
         String REGEX = "^.*,[A-Za-z ]+,\\d+$";//regular expression for syntax of adding a song
         
         Scanner myObj = new Scanner(System.in);//creates a scanner object to read inputs

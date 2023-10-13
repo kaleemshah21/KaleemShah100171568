@@ -47,7 +47,7 @@ public class Playlist {
         boolean songFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
-            if (current.getTitle().equals(songTitle)){
+            if (current.getTitle().equalsIgnoreCase(songTitle)){
                 playlist.remove(index);
                 songFound = true;
             
