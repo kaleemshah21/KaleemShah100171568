@@ -50,57 +50,39 @@ public class OOP {
         //while loop to continuosly loop through the menu until a 0 is inputed as the choice
         while (choice!=0){
             
-            //outputs the menu variable and asks the user to enter a choice
-            System.out.println(menu + "\n" + "enter your choice (1 2 3, etc): ");
+            System.out.println(menu + "\n" + "enter your choice (1 2 3, etc): ");//outputs the menu variable and asks the user to enter a choice
             
-            //this tries to set choice to the user input but if its not a string it will catch the error and print an error message
-            try{
+            try{ //this tries to set choice to the user input but if its not a string it will catch the error and print an error message
                 choice = myObj.nextInt();
             }
             catch(Exception e){
                 System.out.println("error, invalid entry");
-            }
-            //consumes the newline character (not sure what this means but program doesnt wait for user input if not used)
-            myObj.nextLine(); 
+            }  
+            myObj.nextLine(); //consumes the newline character
             
             //if the user enters 1 as the choice
             if (choice == 1){
+                System.out.println("enter the song in this format (song name,artist,plays)");//this asks the user to enter the song details in the specific format
+                String songDetails = myObj.nextLine();//sets the variable to the users input
                 
-                //this asks the user to enter the song details in the specific format
-                System.out.println("enter the song in this format (song name,artist,plays)");
-                String songDetails = myObj.nextLine();
-                
-                //this uses a module to set the REGEX variable which holds the regular expression for the user input, as the pattern
-                Pattern pattern = Pattern.compile(REGEX);
-                
-                //this checks if the pattern matches the regular expression
-                Matcher matcher = pattern.matcher(songDetails);
-                
-                //if the pattern doesnt match, an error message is outputted
-                if (!matcher.matches()) {
+                Pattern pattern = Pattern.compile(REGEX);//this uses a module to set the REGEX variable which holds the regular expression for the user input, as the pattern
+                Matcher matcher = pattern.matcher(songDetails);//this checks if the pattern matches the regular expression    
+                if (!matcher.matches()) {//if the pattern doesnt match, an error message is outputted
                     System.out.println("invalid entry");
                 }
-                
-                //if the pattern does match, it continues to split the input at the commas for each song detail
-                else{
+                else{//otherwise, if the pattern does match, it continues to split the input at the commas for each song detail
                     String[] songDetailsList = songDetails.split(",");
-                    
-                    //tries to set variables for each song detail, if for example the user enters a string for the plays variable which is an int->
-                    //it will catch the error and display an error message
-                    try{
+        
+                    try{//tries to set variables for each song detail, if for example the user enters a string for the plays variable which is an integer it will catch the error and display an error message
                         String songName = songDetailsList[0].trim();
                         String songArtist = songDetailsList[1].trim();
                         int songPlays = Integer.parseInt(songDetailsList[2]);
-                        Song song1 = new Song(songName,songArtist,songPlays);
-                        myPlaylist.addSong(song1);
-                        
-                        //this creates a new song object with the users input and adds it to the array list of songs
-//                        songs.add(new Song(songName, songArtist, songPlays));
-                        System.out.println("success");
+                        Song song1 = new Song(songName,songArtist,songPlays);//creates a Song object based on the users inputs which have been error checked
+                        myPlaylist.addSong(song1);//adds the song to a playlist
+                        System.out.println("successfully added");//outputs a success message to show that the object has been created
                     }
                     
-                    //displays an error message if an error is caught
-                    catch(Exception e){
+                    catch(Exception e){//displays an error message if an error is caught
                         System.out.println("Invalid Entry");
                     }
 
@@ -111,79 +93,33 @@ public class OOP {
             //if the user enters 2 as the choice
             else if (choice == 2){
                 
-                //asks the user to enter the title of the song they want to remove
-                System.out.println("Enter the title of the song you want to remove: ");
-                
-                //sets the song name to a variable called songTORemove
-                String songTORemove = myObj.nextLine();
-                boolean Found = myPlaylist.removeSong(songTORemove);
-                if (!Found){
+                System.out.println("Enter the title of the song you want to remove: ");//asks the user to enter the title of the song they want to remove
+                String songTORemove = myObj.nextLine();//sets the song name to a variable called songTORemove
+                boolean Found = myPlaylist.removeSong(songTORemove);//calls the removeSong method in the Playlist class which searches through the arraylist and if found, removes the song and returns true
+                if (!Found){//if the title doesnt match any song titles in the array list, false is returned and a suitable message is outputted
                     System.out.println("song not found");
                 }
-                else{
+                else{//if the returned value isnt false then the song has been removed so a suitable message is outputted
                     System.out.println("song has been removed successfully");
                 }
-                //sets a boolean variable to false
-//                boolean songFound = false;
-//                
-//                //searches the songs array list to see if the song is there
-//                for (Song song:songs){
-//                    
-//                    //if the song is present, it will be removed from the array list
-//                    if (song.getTitle().equalsIgnoreCase(songTORemove)){
-////                        songs.remove(song);
-//                        songFound = true;
-//                        System.out.println("the song has been removed.");
-//                        break;
-//                    }
-//                }
-//                //if the song is not present in the array list then it will output a message saying so
-//                if (!songFound){
-//                    System.out.println("song not in the list.");
-//                }
+
             }
             
             //if the user enters 3 as the choice
             else if (choice == 3){
-                
-                //loops through the song array list
-                // Print the updated list of songs to verify the title change
-                
-                
-                myPlaylist.printAll();
-//                for (Song song : songs) {
-//                    System.out.println("Title: " + song.getTitle());
-//                    System.out.println("Artist: " + song.getArtist());
-//                    System.out.println("Plays: " + song.getPlays());
-//                    System.out.println();
-//                }
+                myPlaylist.printAll();//calls the printAll method in the Playlist class which loops through the arraylist and outputs all the songs present
             }
             
             //if the user enters 4 as the choice
             else if (choice == 4){
-                
-                //asks the user to enter the minimum number of plays
-                System.out.println("enter the minimum number of plays you want to see: ");
-                
-                //tries to set a variable to the input
-                try{
-                    //if the input is not an integer, it will catch the error
+                System.out.println("enter the minimum number of plays you want to see: ");//asks the user to enter the minimum number of plays
+
+                try{//tries to set a variable to the input, if the input is not an integer, it will catch the error
                     int minNumberOfPlays = myObj.nextInt();
-                    
-                    //searches through the songs array list and if the song has plays above the min number, it will output it
-                    for (Song song:songs){
-                        if (song.getPlays() > minNumberOfPlays){
-                            System.out.println("Title: " + song.getTitle());
-                            System.out.println("Artist: " + song.getArtist());
-                            System.out.println("Plays: " + song.getPlays());
-                            System.out.println();
-                        }
-                        
-                    }
+                    myPlaylist.printAllAbovePlays(minNumberOfPlays);//calls the printAllAbovePlays method which takes the min number of plays entered and outputs all songs with higher plays
                 }
                 
-                //catches the error and outputs a message
-                catch(Exception e){
+                catch(Exception e){//catches the error and outputs a message
                     System.out.println("Invalid Entry");
                 }
                 
@@ -192,82 +128,37 @@ public class OOP {
             //if the user enters 5 as the choice
             else if (choice == 5){
                 
-                //prompts the user to enter the song title they would like to update the plays for
-                System.out.println("Enter the title of the song you want to update: ");
-                //sets the variable to the users input
-                String songTitleToFind = myObj.nextLine();
-                //sets a variable to false until found
-                try{
-                    System.out.println("enter the new number of plays");
-                    int updatedPlays = myObj.nextInt();
-                    boolean success = myPlaylist.setSongPlays(songTitleToFind,updatedPlays);
-                    if (!success){
+                System.out.println("Enter the title of the song you want to update: ");//prompts the user to enter the song title they would like to update the plays for
+                String songTitleToFind = myObj.nextLine();//sets the variable to the users input
+                try{//tries to set the input to an integer, if not an integer, it will catch the error
+                    System.out.println("enter the new number of plays");//asks the user to enter the new number of plays
+                    int updatedPlays = myObj.nextInt();//sets the user input to a variable
+                    boolean success = myPlaylist.setSongPlays(songTitleToFind,updatedPlays);//sets a boolean variable to the returned value of the method setSongPlays
+                    //the method setSongPlays searches through the arraylist to find a matching song title, if found it will return true, otherwise it will return false
+                    if (!success){//if returned false, a message saying the song isnt found will be outputted
                         System.out.println("song not found");
                     }
-                    else{
+                    else{//otherwise, it will output a success message
                         System.out.println("song successfully updated");
                     }
                     
                 }
-                catch(Exception e){
+                catch(Exception e){//catches the input error and displays an error message
                     System.out.println("not a valid number");
                 }
-                
-                
-                
-                
-//                boolean songFound = false;
-//                //tries the code below and catches the error e.g. if an invalid data type is entered as the integer plays
-//                try{
-//                    //prompts the user to enter the number of plays
-//                    System.out.println("enter the new number of plays");
-//                    int updatedPlays = myObj.nextInt();
-//                    //consumes the newline character
-//                    myObj.nextLine();
-//                    
-//                    //searches through the songs until the song title is found
-//                    for (Song song:songs){
-//                        if (song.getTitle().equalsIgnoreCase(songTitleToFind)){
-//                            //changes the plays attribute for the song
-//                            song.setPlays(updatedPlays);
-//                            //sets songFound to true as the song is now found
-//                            songFound = true;
-//                            //outputs the new updated information
-//                            System.out.println("Updated Song Information: ");
-//                            System.out.println("Title: " + song.getTitle());
-//                            System.out.println("Artist: " + song.getArtist());
-//                            System.out.println("Plays: " + song.getPlays());
-//                            System.out.println();
-//                        }
-//                        
-//                    }
-//                    //if the song is not found, an error message will be displayed
-//                    if (!songFound){
-//                        System.out.println("song not found");
-//                    }
-//                    
-//                }
-//                //if there is an error it will catch it and output an error message, this is to prevent the program from crashing
-//                catch(Exception e){
-//                    System.out.println("Invalid Entry");
-//                }
-                
-
-                
+                       
             }
             
-            
-            
-            
+            //if the user enters 6 as the choice
             else if (choice == 6){
-                System.out.println("enter the name of the artist whos songs you would like to see: ");
-                String artistToFind = myObj.nextLine();
-                myPlaylist.findByArtist(artistToFind);
-                    
+                System.out.println("enter the name of the artist whos songs you would like to see: ");//prompts the user to enter the chosen artist
+                String artistToFind = myObj.nextLine();//sets the input to a variable
+                myPlaylist.findByArtist(artistToFind);//calls the findByArtist method which takes the user input and searches the arraylist to find all songs by the entered artist
             }
             
+            //if the user enters 7 as the choice
             else if (choice == 7){
-                myPlaylist.getRandomSong();
+                myPlaylist.getRandomSong();//calls the method getRandomSong which outputs a random song within the playlist
             }
             //if the user enters 0 as the choice
             else if (choice == 0){
@@ -276,7 +167,7 @@ public class OOP {
                 System.out.println("GoodBye");
             }
             
-            //if the user enters anything other than 0,1,2,3,4
+            //if the user enters anything other than 0,1,2,3,4,5,6,7
             else{
                 //loop will just continue
                 System.out.println("");

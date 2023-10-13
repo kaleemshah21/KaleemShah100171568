@@ -39,10 +39,7 @@ public class Playlist {
     public void printAll(){
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
-            System.out.println(current.getTitle());
-            System.out.println(current.getArtist());
-            System.out.println(current.getPlays());
-            System.out.println("\n");
+            current.print();
         }
     }
     
