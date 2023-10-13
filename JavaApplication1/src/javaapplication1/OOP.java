@@ -21,7 +21,7 @@ public class OOP {
         songs[6]= new Song("Echoes of Tomorrow","Aurora Borealis",98);
         songs[7]= new Song("Lost in the Labyrinth of Love","Echo Enigma",27);
         songs[8]= new Song("Invisible Wings","Velvet Shadows",55);
-        songs[9]= new Song("Enchanted Moonlight","Solar Flare Orchestra	",76);
+        songs[9]= new Song("Enchanted Moonlight","Solar Flare Orchestra",76);
         
         //searches through all songs in the songs list and adds them to the playlist arraylist
         for (Song song:songs){
@@ -116,7 +116,7 @@ public class OOP {
                     int minNumberOfPlays = myObj.nextInt();
                     boolean songsFound = myPlaylist.printAllAbovePlays(minNumberOfPlays);//calls the printAllAbovePlays method which takes the min number of plays entered and outputs all songs with higher plays
                     if (!songsFound){
-                        System.out.println("no songs found by that artist");
+                        System.out.println("no songs with plays above the value");
                     }
                 }
                 
@@ -171,7 +171,7 @@ public class OOP {
             //if the user enters anything other than 0,1,2,3,4,5,6,7
             else{
                 //loop will just continue
-                System.out.println("");
+                System.out.println("Not a valid choice");
             }
         }
         
