@@ -12,10 +12,9 @@ public class OOP {
 
     
     public static void main(String[] args) {
-        Playlist myPlaylist=new Playlist();
-        //creates a new array list called songs which holds the Song objects
-        Song[] songs = new Song[10];
-        
+        Playlist myPlaylist=new Playlist();//creates a new object of the playlist class called myPlaylist
+        Song[] songs = new Song[10];//creates a new array called songs which holds the Song objects
+        //creates 10 default song objects and adds them to the songs list
         songs[0]= new Song("I Wonder","Kanye West",5670600);
         songs[1]= new Song("title2","artist2",10);
         songs[2]= new Song("title3","artist3",10);
@@ -27,6 +26,7 @@ public class OOP {
         songs[8]= new Song("title9","artist9",10);
         songs[9]= new Song("title10","artist10",10);
         
+        //searches through all songs in the songs list and adds them to the playlist arraylist
         for (Song song:songs){
             myPlaylist.addSong(song);
         }
@@ -36,22 +36,13 @@ public class OOP {
         
         
 
-        //List<Song> songs = new ArrayList<>();
+     
         
-        //regular expression for adding a song
-        String REGEX = "^.*,[A-Za-z ]+,\\d+$";
+        String REGEX = "^.*,[A-Za-z ]+,\\d+$";//regular expression for syntax of adding a song
         
-        //added a few songs when the program is run initially to make it easier to test the code
-//        songs.add(new Song("I Wonder", "Kanye West", 491481155));
-//        songs.add(new Song("No Role Modelz", "J. Cole", 12345));
-//        songs.add(new Song("songname1", "artist1", 491481155));
-//        songs.add(new Song("songname2", "artist3", 12));
+        Scanner myObj = new Scanner(System.in);//creates a scanner object to read inputs
         
-        //creates a scanner object to read inputs
-        Scanner myObj = new Scanner(System.in);
-        
-        //sets a variable called choice to 7 which is just used as a place holder until the user inputs their choice
-        int choice = 11;
+        int choice = 11; //sets a variable called choice to 11 which is just used as a place holder until the user inputs their choice
         
         //creates a variable called menu which displays a menu on screen when printed
         String menu = "\n 1.)Add a new song \n 2.)Remove a song \n 3.)Print a list of all the songs stored \n 4.)print a list of songs over a certain number of plays \n 5.)update a songs number of plays \n 6.)print all songs by a given artist \n 7.)print a random song \n 0.)Exit";
