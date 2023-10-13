@@ -206,15 +206,22 @@ public class OOP {
                 //sets the variable to the users input
                 String songTitleToFind = myObj.nextLine();
                 //sets a variable to false until found
-                System.out.println("enter the new number of plays");
-                int updatedPlays = myObj.nextInt();
-                boolean success = myPlaylist.setSongPlays(songTitleToFind,updatedPlays);
-                if (!success){
-                    System.out.println("song not found");
+                try{
+                    System.out.println("enter the new number of plays");
+                    int updatedPlays = myObj.nextInt();
+                    boolean success = myPlaylist.setSongPlays(songTitleToFind,updatedPlays);
+                    if (!success){
+                        System.out.println("song not found");
+                    }
+                    else{
+                        System.out.println("song successfully updated");
+                    }
+                    
                 }
-                else{
-                    System.out.println("song successfully updated");
+                catch(Exception e){
+                    System.out.println("not a valid number");
                 }
+                
                 
                 
                 
