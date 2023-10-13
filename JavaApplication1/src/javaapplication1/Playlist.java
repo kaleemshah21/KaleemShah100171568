@@ -69,13 +69,16 @@ public class Playlist {
         return songFound;
     }
     
-    public void printAllAbovePlays(int songPlays){
+    public boolean printAllAbovePlays(int songPlays){
+        boolean songsFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
             if (current.getPlays()>songPlays){
                 current.print();
+                songsFound = true;
             }
         }
+        return songsFound;
     }
     
     public void findByArtist(String songArtist){
@@ -85,6 +88,7 @@ public class Playlist {
             if (current.getArtist().equalsIgnoreCase(songArtist)){
                 current.print();
                 artistFound = true;
+                
                 
             }
         }

@@ -114,7 +114,10 @@ public class OOP {
 
                 try{//tries to set a variable to the input, if the input is not an integer, it will catch the error
                     int minNumberOfPlays = myObj.nextInt();
-                    myPlaylist.printAllAbovePlays(minNumberOfPlays);//calls the printAllAbovePlays method which takes the min number of plays entered and outputs all songs with higher plays
+                    boolean songsFound = myPlaylist.printAllAbovePlays(minNumberOfPlays);//calls the printAllAbovePlays method which takes the min number of plays entered and outputs all songs with higher plays
+                    if (!songsFound){
+                        System.out.println("no songs found by that artist");
+                    }
                 }
                 
                 catch(Exception e){//catches the error and outputs a message
