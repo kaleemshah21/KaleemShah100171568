@@ -10,40 +10,40 @@ import java.util.Random;
  *
  * @author 100171568
  */
-public class Playlist {
+public class Playlist {//creates a Playlist class with an arraylist called playlist as an attribute
     private ArrayList<Song> playlist;
     
     
     
-    public Playlist(){
+    public Playlist(){//constructor, creates a new arraylist
         this.playlist=new ArrayList<>();
     }
     
-    public void addSong(Song song){
+    public void addSong(Song song){//takes the song object passed through and adds it to the playlist array list
         this.playlist.add(song);
     }
     
     
-    public int getLength(){
+    public int getLength(){//gets the number of items/size of the arraylist
         return this.playlist.size();
         
     }
     
-    public void clearPlaylist(){
+    public void clearPlaylist(){//clears the playlist
         this.playlist.clear();
     }
     
     
     
     
-    public void printAll(){
+    public void printAll(){//searches through each Song object in the playlist and prints them
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
             current.print();
         }
     }
     
-    public boolean removeSong(String songTitle){
+    public boolean removeSong(String songTitle){//takes the song title entered by the user and if the song is in the playlist, it removes it and returns true, if not in the playlist it returns false
         boolean songFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
@@ -56,7 +56,7 @@ public class Playlist {
         return songFound;
     }
     
-    public boolean setSongPlays(String songTitle,int songPlays ){
+    public boolean setSongPlays(String songTitle,int songPlays ){//searches for the song in the playlist, if found, it updates the plays and returns true, if not found, returns false
         boolean songFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
@@ -69,8 +69,8 @@ public class Playlist {
         return songFound;
     }
     
-    public boolean printAllAbovePlays(int songPlays){
-        boolean songsFound = false;
+    public boolean printAllAbovePlays(int songPlays){//searches for all songs in the playlist that have the plays value higher than the value the user entered, if there are songs that match this ->
+        boolean songsFound = false;//then it calls the method to print it and returns true, if none match, returns false.
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
             if (current.getPlays()>songPlays){
@@ -81,7 +81,7 @@ public class Playlist {
         return songsFound;
     }
     
-    public void findByArtist(String songArtist){
+    public void findByArtist(String songArtist){//searches the playlist for all songs by an entered artist and prints them, if none found, it outputs a message.
         boolean artistFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
@@ -97,7 +97,7 @@ public class Playlist {
         }
     }
     
-    public void getRandomSong(){
+    public void getRandomSong(){//sets a random integer from 0 to the size of the playlist, then prints the song which has that index
         Random rand = new Random();
         int n = rand.nextInt(this.playlist.size());
         Song randomSong = this.playlist.get(n);
