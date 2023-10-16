@@ -8,7 +8,7 @@ import java.util.regex.*;
  *
  * @author shahk
  */
-public class OOP {
+public class Main {
     
     public void createDefaultSongs(Playlist myPlaylist){
         Song[] songs = new Song[10];//creates a new array called songs which holds the Song objects
@@ -33,7 +33,7 @@ public class OOP {
     
     public static void main(String[] args) {
         Playlist myPlaylist=new Playlist();//creates a new object of the playlist class called myPlaylist
-        OOP oop = new OOP(); // Create an object of the oop class
+        Main oop = new Main(); // Create an object of the oop class
         oop.createDefaultSongs(myPlaylist); // Calls the method createDefaultSongs
 
         String REGEX = "^.*,[A-Za-z ]+,\\d+$";//regular expression for syntax of adding a song
