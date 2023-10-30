@@ -10,7 +10,7 @@ import java.util.regex.*;
  */
 public class Main {
     
-    public void createDefaultSongs(Playlist myPlaylist){
+    public void createDefaultSongs(Playlist myPlaylist){//this method creates 10 song objects and adds them to the playlist arraylist
         Song[] songs = new Song[10];//creates a new array called songs which holds the Song objects
         songs[0]= new Song("Electric Dreams at Midnight","Luna Aurora",72);
         songs[1]= new Song("Whispers in the Rain","Silver Harmony",45);
@@ -88,7 +88,7 @@ public class Main {
 
             }
             
-            //if the user enters 2 as the choice
+            //if the user enters 2 as the choice, allows user to enter the title of song to be removed, then removes it.
             else if (choice == 2){
                 
                 System.out.println("Enter the title of the song you want to remove: ");//asks the user to enter the title of the song they want to remove
@@ -103,12 +103,12 @@ public class Main {
 
             }
             
-            //if the user enters 3 as the choice
+            //if the user enters 3 as the choice, prints all songs in playlist
             else if (choice == 3){
                 myPlaylist.printAll();//calls the printAll method in the Playlist class which loops through the arraylist and outputs all the songs present
             }
             
-            //if the user enters 4 as the choice
+            //if the user enters 4 as the choice, displays songs above a given number of plays
             else if (choice == 4){
                 System.out.println("enter the minimum number of plays you want to see: ");//asks the user to enter the minimum number of plays
 
@@ -126,7 +126,7 @@ public class Main {
                 
             }
             
-            //if the user enters 5 as the choice
+            //if the user enters 5 as the choice, allows user to update plays for a given song
             else if (choice == 5){
                 
                 System.out.println("Enter the title of the song you want to update: ");//prompts the user to enter the song title they would like to update the plays for
@@ -150,18 +150,18 @@ public class Main {
                        
             }
             
-            //if the user enters 6 as the choice
+            //if the user enters 6 as the choice, displays all songs by a given artist
             else if (choice == 6){
                 System.out.println("enter the name of the artist whos songs you would like to see: ");//prompts the user to enter the chosen artist
                 String artistToFind = myObj.nextLine();//sets the input to a variable
                 myPlaylist.findByArtist(artistToFind);//calls the findByArtist method which takes the user input and searches the arraylist to find all songs by the entered artist
             }
             
-            //if the user enters 7 as the choice
+            //if the user enters 7 as the choice, random song is outputted
             else if (choice == 7){
                 myPlaylist.getRandomSong();//calls the method getRandomSong which outputs a random song within the playlist
             }
-            //if the user enters 0 as the choice
+            //if the user enters 0 as the choice, program ends
             else if (choice == 0){
                 
                 //outputs Goodbye, the choice is now 0 so the while loop will end
