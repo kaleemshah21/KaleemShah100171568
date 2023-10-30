@@ -58,7 +58,7 @@ public class Main {
             }  
             myObj.nextLine(); //consumes the newline character
             
-            //if the user enters 1 as the choice
+            //if the user enters 1 as the choice, adds a song with the parameters entered by the user
             if (choice == 1){
                 System.out.println("enter the song in this format (song name,artist,plays)");//this asks the user to enter the song details in the specific format
                 String songDetails = myObj.nextLine();//sets the variable to the users input
