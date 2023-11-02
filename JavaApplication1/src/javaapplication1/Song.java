@@ -2,7 +2,7 @@ package javaapplication1;
 
 /**
  *
- * @author shahk
+ * @author Kaleem Shah @version 1.18
  */
 
 //creates a Song class with three attributes of title, artist and plays

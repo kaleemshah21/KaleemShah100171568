@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  *
- * @author 100171568
+ * @author Kaleem Shah @version 1.18
  */
 public class Playlist {//creates a Playlist class with an arraylist called playlist as an attribute
     private ArrayList<Song> playlist;
