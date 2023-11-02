@@ -43,7 +43,9 @@ public class Playlist {//creates a Playlist class with an arraylist called playl
         }
     }
     
-    public boolean removeSong(String songTitle){//takes the song title entered by the user and if the song is in the playlist, it removes it and returns true, if not in the playlist it returns false
+    /*takes the song title entered by the user and if the song is in the playlist, it 
+    removes it and returns true, if not in the playlist it returns false*/
+    public boolean removeSong(String songTitle){
         boolean songFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
@@ -56,7 +58,9 @@ public class Playlist {//creates a Playlist class with an arraylist called playl
         return songFound;
     }
     
-    public boolean setSongPlays(String songTitle,int songPlays ){//searches for the song in the playlist, if found, it updates the plays and returns true, if not found, returns false
+    /*searches for the song in the playlist, if found,
+    it updates the plays and returns true, if not found, returns false*/
+    public boolean setSongPlays(String songTitle,int songPlays ){
         boolean songFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
@@ -69,8 +73,11 @@ public class Playlist {//creates a Playlist class with an arraylist called playl
         return songFound;
     }
     
-    public boolean printAllAbovePlays(int songPlays){//searches for all songs in the playlist that have the plays value higher than the value the user entered, if there are songs that match this ->
-        boolean songsFound = false;//then it calls the method to print it and returns true, if none match, returns false.
+    /*searches for all songs in the playlist that have the plays value higher than 
+    the value the user entered, if there are songs that match this, then it calls 
+    the method to print it and returns true, if none match, returns false.*/
+    public boolean printAllAbovePlays(int songPlays){
+        boolean songsFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
             if (current.getPlays()>songPlays){
@@ -81,7 +88,8 @@ public class Playlist {//creates a Playlist class with an arraylist called playl
         return songsFound;
     }
     
-    public void findByArtist(String songArtist){//searches the playlist for all songs by an entered artist and prints them, if none found, it outputs a message.
+    /*searches the playlist for all songs by an entered artist and prints them, if none found, it outputs a message.*/
+    public void findByArtist(String songArtist){
         boolean artistFound = false;
         for (int index=0;index < playlist.size();index++){
             Song current=playlist.get(index);
